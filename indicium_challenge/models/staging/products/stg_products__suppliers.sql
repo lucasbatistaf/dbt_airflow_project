@@ -1,0 +1,2 @@
+SELECT *
+FROM {{ source('PRODUCTS', 'SUPPLIERS') }}

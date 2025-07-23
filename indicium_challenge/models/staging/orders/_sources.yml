@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: ORDERS
+    database: INDICIUM_AE_CHALLENGE_RAW
+    schema: ORDERS
+    tables:
+      - name: ORDERS
+      - name: ORDER_DETAILS
+      - name: SHIPPERS

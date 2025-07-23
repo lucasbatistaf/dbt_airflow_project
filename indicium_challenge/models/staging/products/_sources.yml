@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: PRODUCTS
+    database: INDICIUM_AE_CHALLENGE_RAW
+    schema: PRODUCTS
+    tables:
+      - name: PRODUCTS
+      - name: SUPPLIERS
+      - name: CATEGORIES
