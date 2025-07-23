@@ -1,5 +1,6 @@
 {{ config(
-    tags=['staging']
+    tags=['staging'],
+    unique_key='order_id'
 ) }}
 
 WITH source AS (
@@ -13,4 +14,4 @@ WITH source AS (
 )
 
 SELECT *
-FROM source;
+FROM source
