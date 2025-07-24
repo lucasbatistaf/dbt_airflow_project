@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_people__employees
+    description: >
+      A staging table containing employee information for orders table.
+
+    columns:
+      - name: employee_id 
+        description: Unique identifier for each employee
+        tests:
+          - unique
+          - not_null
+
+      - name: reports_to
+        description: Manager id of this employee 
+        tests:
+          - not_null
+
+      - name: first_name
+        description: Employee first name
+        tests:
+          - not_null
+
+      - name: last_name
+        description: Employee last name
+        tests:
+          - not_null
+
+      - name: title
+        description: Employee job title
+        tests:
+          - not_null
+
+      - name: birth_date
+        description: Employee birth date
+        tests:
+          - not_null
+
+      - name: hire_date
+        description: Employee hire date
+        tests:
+          - not_null
+
+      - name: city
+        description: Employee city
+        tests:
+          - not_null
+
+      - name: country
+        description: Employee country
+        tests:
+          - not_null

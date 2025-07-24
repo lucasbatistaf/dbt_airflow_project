@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_products__categories
+    description: >
+      A staging table containing category information for products table.
+      This table includes category unique id and name.
+
+    columns:
+      - name: category_id 
+        description: Unique identifier for each category
+        tests:
+          - unique
+          - not_null
+
+      - name: category_name
+        description: Name of each category
+        tests:
+          - unique
+          - not_null

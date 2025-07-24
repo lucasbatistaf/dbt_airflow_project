@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_orders__order_details
+    description: >
+      A staging table containing order details information for order table.
+
+    columns:
+      - name: order_id 
+        description: Unique identifier for each order
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id 
+        description: Unique identifier for each product
+        tests:
+          - unique
+          - not_null
+
+      - name: quantity
+        description: Product quantity for each order
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: Price of each product unit
+        tests:
+          - not_null
+
+      - name: discount
+        description: Discount in each product unit sold

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_products__suppliers
+    description: >
+      A staging table containing suppliers information for the orders table,
+      contains critical information about the suppliers of the products sold by the company.
+      This table contains the supplier unique id, name, city and country.
+      
+    columns:
+      - name: supplier_id 
+        description: Unique identifier for each suppliers
+        tests:
+          - unique
+          - not_null
+
+      - name: company_name
+        description: Supplier's company name
+        tests:
+          - not_null
+
+      - name: city
+        description: Supplier's city
+        tests:
+          - not_null
+
+      - name: country
+        description: Supplier's country
+        tests:
+          - not_null

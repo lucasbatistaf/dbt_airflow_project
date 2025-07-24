@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: stg_products__products
+    description: >
+      A staging table containing products information.
+     
+    columns:
+      - name: product_id
+        description: Unique identifier for each products
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: Product name
+        tests:
+          - not_null
+
+      - name: supplier_id
+        description: Products supplier id
+        tests:
+          - not_null
+
+      - name: category_id
+        description: Products category id
+        tests:
+          - not_null
+
+      - name: quantity_per_unit
+        description: Product quantity per unit of sold
+
+      - name: unit_price
+        description: Product price per unit
+        tests:
+          - not_null
+
+      - name: units_in_stock
+        description: Products units in stock
+
+      - name: units_on_order
+        description: Products units on orders
+
+      - name: reorder_level
+        description: Product reordering level, the higher level, the higher the product need in stock
+
+      - name: discontinued
+        description: Product is curretly in production

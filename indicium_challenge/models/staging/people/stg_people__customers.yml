@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_people__customers
+    description: >
+      A staging table containing customer information for orders table.
+
+    columns:
+      - name: customer_id 
+        description: Unique identifier for each Customer
+        tests:
+          - unique
+          - not_null
+
+      - name: company_name
+        description: Customer company name
+        tests:
+          - not_null
+
+      - name: contact_name
+        description: Customer contact name
+
+      - name: contact_title
+        description: Customer contact title
+
+      - name: country
+        description: Customer country
+        tests:
+          - not_null
+
+      - name: city
+        description: Customer city
+        tests:
+          - not_null
+
+      - name: address
+        description: Customer country
+
+      - name: phone
+        description: Customer country
