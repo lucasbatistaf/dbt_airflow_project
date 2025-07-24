@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: >
+      A dimension table containing products details information from product tables.
+
+    columns:
+      - name: product_key 
+        description: Unique surrogate key identifier for each product row
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id 
+        description: Product identifier
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: Product name
+        tests:
+          - not_null
+
+      - name: category_name
+        description: Product category name
+        tests:
+          - not_null
+
+      - name: supplier_name
+        description: Supplier company name
+        tests:
+          - not_null
+
+      - name: supplier_city
+        description: Supplier company city
+        tests:
+          - not_null
+
+      - name: supplier_country
+        description: Supplier company country
+        tests:
+          - not_null
+
+      - name: quantity_per_unit
+        description: Quantity in each product unit
+
+      - name: unit_price
+        description: Price of each product unit
+        tests:
+          - not_null
+
+      - name: units_in_stock
+        description: Products units in stock
+
+      - name: units_on_order
+        description: Products units on orders
+
+      - name: reorder_level
+        description: Level of desire for each product
+
+      - name: discontinued
+        description: If the production of the product still going on
