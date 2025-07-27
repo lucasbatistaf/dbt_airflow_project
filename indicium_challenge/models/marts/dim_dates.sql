@@ -1,5 +1,5 @@
 {{ config(
-    tags=['marts_dim']
+    tags=['dimension']
 ) }}
 
 WITH source AS (

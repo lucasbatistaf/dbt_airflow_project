@@ -6,5 +6,4 @@ sources:
     schema: PRODUCTS
     tables:
       - name: PRODUCTS
-      - name: SUPPLIERS
       - name: CATEGORIES

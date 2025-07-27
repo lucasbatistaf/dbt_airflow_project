@@ -1,5 +1,5 @@
 {{ config(
-    tags=['marts_dim']
+    tags=['dimension']
 ) }}
 
 WITH orders AS (
@@ -22,7 +22,7 @@ shippers AS (
     SELECT
         shipper_id,
         company_name
-    FROM {{ ref('stg_orders__shippers') }}
+    FROM {{ ref('stg_people__shippers') }}
 )
 
 SELECT
@@ -35,6 +35,7 @@ SELECT
     o.ship_name,
     o.ship_city,
     o.ship_country,
+    s.shipper_id,
     s.company_name AS shipper_name
 FROM orders AS o 
 LEFT JOIN shippers AS s

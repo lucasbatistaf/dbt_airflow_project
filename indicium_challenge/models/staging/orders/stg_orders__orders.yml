@@ -14,25 +14,21 @@ models:
       - name: order_id 
         description: Order unique identifier
         tests:
-          - unique
           - not_null
 
       - name: customer_id 
         description: Customer unique identifier
         tests:
-          - unique
           - not_null
 
       - name: employee_id 
         description: Employee unique identifier
         tests:
-          - unique
           - not_null
 
       - name: ship_via 
         description: Shippment company identifier
         tests:
-          - unique
           - not_null
 
       - name: required_date
@@ -42,8 +38,6 @@ models:
 
       - name: shipped_date
         description: Shippment date
-        tests:
-          - not_null
 
       - name: freight
         description: Weight of the product

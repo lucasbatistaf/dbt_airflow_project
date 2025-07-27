@@ -7,4 +7,3 @@ sources:
     tables:
       - name: ORDERS
       - name: ORDER_DETAILS
-      - name: SHIPPERS

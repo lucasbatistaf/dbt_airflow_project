@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_orders__shippers
+  - name: stg_people__shippers
     description: >
       A staging table containing shipper information for products table.
       This table includes shipper unique id and name.

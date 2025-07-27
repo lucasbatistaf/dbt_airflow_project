@@ -9,13 +9,11 @@ models:
       - name: order_id 
         description: Unique identifier for each order
         tests:
-          - unique
           - not_null
 
       - name: product_id 
         description: Unique identifier for each product
         tests:
-          - unique
           - not_null
 
       - name: quantity

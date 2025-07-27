@@ -9,7 +9,7 @@ WITH source AS (
         company_name,
         city,
         country
-    FROM {{ source('PRODUCTS', 'SUPPLIERS') }}
+    FROM {{ source('PEOPLE', 'SUPPLIERS') }}
 )
 
 SELECT *

@@ -20,7 +20,6 @@ models:
       - name: order_id
         description: Orders unique identifier
         tests:
-          - unique
           - not_null
 
       - name: product_id

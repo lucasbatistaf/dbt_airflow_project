@@ -6,8 +6,9 @@
 WITH source AS (
     SELECT
         shipper_id,
-        company_name
-    FROM {{ source('ORDERS', 'SHIPPERS') }}
+        company_name,
+        phone
+    FROM {{ source('PEOPLE', 'SHIPPERS') }}
 )
 
 SELECT *

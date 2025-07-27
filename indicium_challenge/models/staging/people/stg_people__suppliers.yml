@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_products__suppliers
+  - name: stg_people__suppliers
     description: >
       A staging table containing suppliers information for the orders table,
       contains critical information about the suppliers of the products sold by the company.

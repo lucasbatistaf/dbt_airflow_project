@@ -1,5 +1,5 @@
 {{ config(
-    tags=['marts_dim']
+    tags=['dimension']
 ) }}
 
 WITH products AS (
@@ -30,14 +30,16 @@ suppliers AS (
         company_name,
         city,
         country
-    FROM {{ ref('stg_products__suppliers')}}
+    FROM {{ ref('stg_people__suppliers')}}
 )
 
 SELECT
     {{ dbt_utils.generate_surrogate_key(['p.product_id']) }} as product_key, 
     p.product_id,
     p.product_name,
+    c.category_id,
     c.category_name,
+    s.supplier_id,
     s.company_name AS supplier_name,
     s.city AS supplier_city,
     s.country AS supplier_country,

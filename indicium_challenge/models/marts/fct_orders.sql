@@ -1,9 +1,14 @@
 {{ config(
-    tags=['marts_fct']
+    tags=['fact']
 ) }}
 
 WITH order_details AS (
-    SELECT *
+    SELECT 
+        order_id,
+        product_id,
+        quantity,
+        unit_price,
+        discount
     FROM {{ ref('stg_orders__order_details') }}
 ),
 
@@ -30,8 +35,7 @@ employees AS (
 
 orders AS (
     SELECT
-        order_id,
-        order_date
+        order_id
     FROM {{ ref('dim_orders') }}
 ),
 

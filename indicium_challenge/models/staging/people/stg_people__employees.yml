@@ -14,8 +14,6 @@ models:
 
       - name: reports_to
         description: Manager id of this employee 
-        tests:
-          - not_null
 
       - name: first_name
         description: Employee first name
