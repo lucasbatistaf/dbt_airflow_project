@@ -20,8 +20,9 @@ orders AS (
 SELECT
     {{ dbt_utils.generate_surrogate_key(['s.shipper_id', 'o.order_id']) }} as shipper_key, 
     s.shipper_id,
-    s.company_name,
-    s.phone
+    s.company_name AS shipper_name,
+    s.phone AS shipper_phone,
+    o.order_id
 FROM shippers AS s
 LEFT JOIN orders AS o 
     ON s.shipper_id = o.ship_via

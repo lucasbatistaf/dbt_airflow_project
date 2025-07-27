@@ -1,25 +1,2 @@
-Info Created .vscode/extensions.json with dbt extension recommendation
-Success Project created successfully!
-Info Project name: indicium_challenge
-Info Project directory: indicium_challenge
-Info Setting up your profile...
-Success Profile written to /home/lucasbatista/.dbt/profiles.yml
-Validating profile inputs, adapters, and connection
-
-dbt-fusion 2.0.0-beta.28
-   Loading ~/.dbt/profiles.yml
- Debugging profile: dev
- Debugging dbt version: 2.0.0-beta.28
- Debugging platform: linux x86_64 (unix)
- Debugging adapter type: snowflake (remote)
- Debugging dependencies:
-  git: OK
- Debugging connection:
-  "account": "QKWHERH-STB88368",
-  "role": "SYSADMIN",
-  "user": "LUCASBATISTAF",
-  "database": "INDICIUM_AE_CHALLENGE",
-  "warehouse": "COMPUTE_WH",
-  "schema": "LUCAS"
- Debugging connection test: OK
-  Debugged All checks passed!
+error: dbt1001: The current directory is not a dbt project directory; cd into it or pass a <path> to it via --project-dir <path>
+  Finished 'build'  with 1 error in 599us 44ns

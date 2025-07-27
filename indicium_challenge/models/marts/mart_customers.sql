@@ -8,6 +8,5 @@ SELECT
     contact_name,
     contact_title,
     country,
-    city,
-    order_id
+    city
 FROM {{ ref('dim_customers') }}

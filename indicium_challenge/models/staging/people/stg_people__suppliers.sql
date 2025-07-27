@@ -7,8 +7,11 @@ WITH source AS (
     SELECT
         supplier_id,
         company_name,
+        contact_name,
+        contact_title,
         city,
-        country
+        country,
+        phone
     FROM {{ source('PEOPLE', 'SUPPLIERS') }}
 )
 

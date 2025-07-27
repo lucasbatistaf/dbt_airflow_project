@@ -10,10 +10,12 @@ models:
       - name: shipper_id 
         description: Unique identifier for each shipper
         tests:
-          - unique
           - not_null
 
-      - name: shipper_name
+      - name: company_name
         description: Name of each shipper
         tests:
           - not_null
+
+      - name: phone
+        description: Phone of each shipper

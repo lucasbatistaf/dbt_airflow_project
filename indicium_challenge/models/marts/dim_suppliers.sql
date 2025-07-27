@@ -2,30 +2,35 @@
     tags=['dimension']
 ) }}
 
-WITH employees AS (
+WITH supplier AS (
     SELECT
-        *
-    FROM {{ ref('int_people__employees') }}
+        supplier_id,
+        company_name,
+        contact_name,
+        contact_title,
+        city,
+        country,
+        phone
+    FROM {{ ref('stg_people__suppliers') }}
 ),
 
-orders AS (
+products AS (
     SELECT
-        order_id,
-        employee_id
-    FROM {{ ref('stg_orders__orders') }}
+        product_id,
+        supplier_id
+    FROM {{ ref('stg_products__products') }}
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['e.employee_id', 'o.order_id']) }} as employee_key, 
-    e.employee_id,
-    e.reports_to,
-    e.employee_name,
-    e.title,
-    e.birth_date,
-    e.hire_date,
-    e.country,
-    e.city,
-    o.order_id
-FROM employees AS e
-LEFT JOIN orders AS o 
-    ON e.employee_id = o.employee_id
+    {{ dbt_utils.generate_surrogate_key(['s.supplier_id', 'p.product_id']) }} as supplier_key, 
+    s.supplier_id,
+    s.company_name,
+    s.contact_name,
+    s.contact_title,
+    s.city,
+    s.country,
+    s.phone,
+    p.product_id
+FROM supplier AS s
+LEFT JOIN products AS p 
+    ON s.supplier_id = p.supplier_id
