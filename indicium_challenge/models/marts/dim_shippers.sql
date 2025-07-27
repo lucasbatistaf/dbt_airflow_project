@@ -8,21 +8,11 @@ WITH shippers AS (
         company_name,
         phone
     FROM {{ ref('stg_people__shippers') }}
-),
-
-orders AS (
-    SELECT
-        order_id,
-        ship_via
-    FROM {{ ref('stg_orders__orders') }}
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['s.shipper_id', 'o.order_id']) }} as shipper_key, 
+    {{ dbt_utils.generate_surrogate_key(['s.shipper_id']) }} as shipper_key, 
     s.shipper_id,
     s.company_name AS shipper_name,
-    s.phone AS shipper_phone,
-    o.order_id
+    s.phone AS shipper_phone
 FROM shippers AS s
-LEFT JOIN orders AS o 
-    ON s.shipper_id = o.ship_via

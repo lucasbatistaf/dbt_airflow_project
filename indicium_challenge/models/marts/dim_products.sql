@@ -22,15 +22,6 @@ categories AS (
         category_id,
         category_name
     FROM {{ ref('stg_products__categories')}}
-),
-
-suppliers AS (
-    SELECT
-        supplier_id,
-        company_name,
-        city,
-        country
-    FROM {{ ref('stg_people__suppliers')}}
 )
 
 SELECT
@@ -39,10 +30,6 @@ SELECT
     p.product_name,
     c.category_id,
     c.category_name,
-    s.supplier_id,
-    s.company_name AS supplier_name,
-    s.city AS supplier_city,
-    s.country AS supplier_country,
     p.quantity_per_unit,
     p.unit_price,
     p.units_in_stock,
@@ -52,5 +39,3 @@ SELECT
 FROM products AS p
 LEFT JOIN categories AS c
     ON p.category_id = c.category_id
-LEFT JOIN suppliers AS s 
-    ON p.supplier_id = s.supplier_id

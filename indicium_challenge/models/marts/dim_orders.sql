@@ -16,13 +16,6 @@ WITH orders AS (
         customer_id,
         employee_id
     FROM {{ ref('stg_orders__orders') }}
-),
-
-shippers AS (
-    SELECT
-        shipper_id,
-        company_name
-    FROM {{ ref('stg_people__shippers') }}
 )
 
 SELECT
@@ -34,9 +27,5 @@ SELECT
     o.freight,
     o.ship_name,
     o.ship_city,
-    o.ship_country,
-    s.shipper_id,
-    s.company_name AS shipper_name
-FROM orders AS o 
-LEFT JOIN shippers AS s
-    ON o.ship_via = s.shipper_id
+    o.ship_country
+FROM orders AS o
