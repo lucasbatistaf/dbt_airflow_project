@@ -15,12 +15,12 @@ WITH supplier AS (
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['s.supplier_id']) }} as supplier_key, 
-    s.supplier_id,
-    s.company_name,
-    s.contact_name,
-    s.contact_title,
-    s.city,
-    s.country,
-    s.phone
-FROM supplier AS s
+    {{ dbt_utils.generate_surrogate_key(['supplier_id']) }} as supplier_key, 
+    supplier_id,
+    company_name AS supplier_name,
+    contact_name AS supplier_contact,
+    contact_title AS supplier_contact_title,
+    city AS supplier_city,
+    country AS supplier_country,
+    phone AS supplier_phone
+FROM supplier

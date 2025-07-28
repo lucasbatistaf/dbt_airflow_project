@@ -12,8 +12,7 @@ WITH products AS (
         units_on_order,
         reorder_level,
         discontinued,
-        category_id,
-        supplier_id
+        category_id
     FROM {{ ref('stg_products__products')}}
 ),
 

@@ -7,21 +7,28 @@ WITH fct_orders AS (
         date_id,
         order_id,
         product_id,
-        employee_id,
+        supplier_id,
+        shipper_id,
         quantity,
         unit_price,
         discount
     FROM {{ ref('fct_orders') }}
 ),
 
-employees AS (
+suppliers AS (
     SELECT 
-        employee_id,
-        employee_name,
-        reports_to,
-        country,
-        city
-    FROM {{ ref('dim_employees') }}
+        supplier_id,
+        supplier_name,
+        supplier_city,
+        supplier_country,
+    FROM {{ ref('dim_suppliers') }}
+),
+
+shippers AS (
+    SELECT 
+        shipper_id,
+        shipper_name,
+    FROM {{ ref('dim_shippers') }}
 ),
 
 products AS (
@@ -29,11 +36,7 @@ products AS (
         product_id,
         product_name,
         category_id,
-        category_name,
-        units_in_stock,
-        units_on_order,
-        reorder_level,
-        discontinued
+        category_name
     FROM {{ ref('dim_products') }}
 ),
 
@@ -46,22 +49,25 @@ dates AS (
 
 SELECT
     d.order_date,
-    e.employee_id,
-    e.employee_name,
-    e.reports_to,
-    e.country,
-    e.city,
     fo.order_id,
     p.product_id,
     p.product_name,
     p.category_id,
     p.category_name,
+    su.supplier_id,
+    su.supplier_name,
+    su.supplier_city,
+    su.supplier_country,
+    sh.shipper_id,
+    sh.shipper_name,
     fo.quantity,
     fo.unit_price,
     fo.discount
 FROM fct_orders AS fo
-LEFT JOIN employees AS e 
-    ON fo.employee_id = e.employee_id
+LEFT JOIN shippers AS sh 
+    ON fo.shipper_id = sh.shipper_id
+LEFT JOIN suppliers AS su 
+    ON fo.supplier_id = su.supplier_id
 LEFT JOIN products AS p
     ON fo.product_id = p.product_id
 LEFT JOIN dates AS d 

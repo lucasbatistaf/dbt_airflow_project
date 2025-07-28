@@ -11,10 +11,7 @@ WITH orders AS (
         freight,
         ship_name,
         ship_city,
-        ship_country,
-        ship_via,
-        customer_id,
-        employee_id
+        ship_country
     FROM {{ ref('stg_orders__orders') }}
 )
 

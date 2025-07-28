@@ -27,22 +27,7 @@ models:
         description: Product category name
         tests:
           - not_null
-
-      - name: supplier_name
-        description: Supplier company name
-        tests:
-          - not_null
-
-      - name: supplier_city
-        description: Supplier company city
-        tests:
-          - not_null
-
-      - name: supplier_country
-        description: Supplier company country
-        tests:
-          - not_null
-
+          
       - name: quantity_per_unit
         description: Quantity in each product unit
 
