@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: ORDERS
-    database: INDICIUM_AE_CHALLENGE_RAW
+    database: DBT_AIRFLOW_PROJECT_RAW
     schema: ORDERS
     tables:
       - name: ORDERS

@@ -1,14 +1,20 @@
-# Indicium challenge
+# Data Modelling project
 
-In this challenge, it was required a data modelling of a open source database sample from Microsoft.
-Used dbt and Snowflake to do all the data modelling, data management and data source to a dashboard in [Looker Studio](https://lookerstudio.google.com/reporting/ea1197cb-ceff-49c9-a041-36f897ebc97d/page/p_4y8tumgrud).
+In this I used a open source database sample from Microsoft called Northwind Traders.
 
-Mapped the raw database using dbdiagram.io
+- Data Modelling: dbt
+- Data Warehouse: Snowflake
+- Dashboard in [Looker Studio](https://lookerstudio.google.com/reporting/ea1197cb-ceff-49c9-a041-36f897ebc97d/page/p_4y8tumgrud).
+- Orchestration: Airflow
+- Diagrams: dbdiagram.io
 
-![raw database](https://github.com/lucasbatistaf/indicium_challenge/blob/main/raw_database.png)
+
+- Raw tables
+
+![raw database](https://github.com/lucasbatistaf/dbt_airflow_project/blob/main/images/raw_database.png)
 
 
-Then, usign fact and dimensions to do the final modelling 
+Final modelling: Star Schema, and the Fact and Dimension tables
 
-![fact and dim database](https://github.com/lucasbatistaf/indicium_challenge/blob/main/fact_dim_database.png)
+![fact and dim database](https://github.com/lucasbatistaf/dbt_airflow_project/blob/main/images/fact_dim_database.png)
 

@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: PRODUCTS
-    database: INDICIUM_AE_CHALLENGE_RAW
+    database: DBT_AIRFLOW_PROJECT_RAW
     schema: PRODUCTS
     tables:
       - name: PRODUCTS
