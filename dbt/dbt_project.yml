@@ -1,6 +1,6 @@
-name: indicium_challenge
+name: dbt_airflow_project
 
-profile: indicium_challenge
+profile: dbt_airflow_project
 
 seed-paths: ["seeds"]
 model-paths: ["models"]
@@ -13,11 +13,11 @@ clean-targets:
 
 seeds:
   # Builds seeds into '<your_schema_name>_raw'
-  indicium_challenge:
+  dbt_airflow_project:
     +schema: raw
 
 models:
-  indicium_challenge:
+  dbt_airflow_project:
     # Materialize staging models as views, and marts as tables
     staging:
       +materialized: view
