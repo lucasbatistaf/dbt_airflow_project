@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_orders__orders
+    description: >
+      A fact table containing order details information from order and product tables.
+
+    columns:
+
+      - name: order_date 
+        description: Order date 

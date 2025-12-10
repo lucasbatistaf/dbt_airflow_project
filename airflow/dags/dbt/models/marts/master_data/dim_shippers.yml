@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_shippers
+    description: >
+      A dimension table containing dates information from product tables.
+
+    columns:
+    
+      - name: shipper_id 
+        description: Shipper identifier
+        tests:
+          - not_null

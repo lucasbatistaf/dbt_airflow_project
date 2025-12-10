@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_suppliers
+    description: >
+      A dimension table containing dates information from product tables.
+
+    columns:
+    
+      - name: supplier_id 
+        description: Supplier identifier
+        tests:
+          - not_null

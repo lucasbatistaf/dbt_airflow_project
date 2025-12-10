@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_employees
+    description: >
+      A dimension table containing dates information from product tables.
+
+    columns:
+    
+      - name: employee_id 
+        description: Employee identifier
+        tests:
+          - not_null
