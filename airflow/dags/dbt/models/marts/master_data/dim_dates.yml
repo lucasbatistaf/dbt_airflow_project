@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_dates
+    description: >
+      A dimension table containing dates information from product tables.
+
+    columns:
+    
+      - name: date_id 
+        description: Date identifier
+        tests:
+          - not_null
+
+      - name: order_date
+        description: Formated date
+        tests:
+          - not_null
